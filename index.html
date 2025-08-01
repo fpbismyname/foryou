@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Surat Untuk Kamu</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to top right, #ffd6e0, #ffe9f0);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .open-btn {
+      background: #ff4d79;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 40px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    .open-btn:hover {
+      background: #e63e68;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .popup.show {
+      visibility: visible;
+      transition: opacity 0.5s ease-in-out;
+      opacity: 1;
+    }
+    
+    *{
+      user-select: none;
+      webkit-user-select: none;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      max-width: 350px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: popin 0.4s ease;
+    }
+
+    @keyframes popin {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .cat {
+      width: 120px;
+      margin: 10px auto;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h2 {
+      color: #ff4d79;
+      font-size: 1.4rem;
+      margin-top: 15px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 0;
+    }
+
+    .close-btn {
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 400px) {
+      .card { padding: 20px; }
+      h2 { font-size: 1.2rem; }
+      p { font-size: 0.95rem; }
+      .cat { width: 100px; }
+    }
+  </style>
+</head>
+<body>
+  <button class="open-btn" onclick="openPopup()">💌 Buka Surat</button>
+
+  <div class="popup" id="popup">
+    <button class="close-btn" onclick="closePopup()">×</button>
+    <div class="card">
+      <img class="cat" src="https://www.gstatic.com/android/keyboard/emojikitchen/20230127/u1f339/u1f339_u1f431.png?fbx" alt="Cute Cat">
+      <h2>Happy Girlfriend Day! 💖</h2>
+      <p>Semoga kamu selalu diberkati dan selalu diberikan kesehatan dan kebahagiaan ya my wii. Aku . Aku ga bisa bikin puisi, tapi mau kamu tau satu hal...</p>
+      <p>Kata kata tidak akan pernah cukup untuk menunjukan betapa berartinya kamu dalam hidupku. Terimakasih telah hadir dan im so lucky to meet you, Happy Girlfriend day...</p>
+      <p>💖Love you so... miaw'ch...</p>
+    </div>
+  </div>
+<audio id="myAudio" src="piluMembiru.mp3"></audio>
+
+
+  <script>
+    const popup = document.getElementById("popup");
+    const music = document.getElementById("myAudio")
+    function openPopup() {
+      popup.classList.add("show");
+      music.currentTime=0
+      music.play()
+      
+    }
+    function closePopup() {
+      popup.classList.remove("show");
+      music.pause()
+      music.currentTime=0
+    }
+  </script>
+</body>
+</html>
