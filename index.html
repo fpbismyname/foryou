@@ -74,14 +74,15 @@
     }
 
     .cat {
-      width: 120px;
+      width: 550px;
       margin: 10px auto;
-      animation: float 3s ease-in-out infinite;
+      animation: float 5s linear infinite;
+      transform: scale(10);
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     h2 {
@@ -121,9 +122,9 @@
   <div class="popup" id="popup">
     <button class="close-btn" onclick="closePopup()">×</button>
     <div class="card">
-      <img class="cat" src="https://www.gstatic.com/android/keyboard/emojikitchen/20230127/u1f339/u1f339_u1f431.png?fbx" alt="Cute Cat">
+      <img class="cat" src="kunto.png" alt="Cute Cat">
       <h2>Happy Girlfriend Day! 💖</h2>
-      <p>Semoga kamu selalu diberkati dan selalu diberikan kesehatan dan kebahagiaan ya my wii. Aku . Aku ga bisa bikin puisi, tapi mau kamu tau satu hal...</p>
+      <p>Semoga kamu selalu diberkati dan selalu diberikan kesehatan dan kebahagiaan ya my wii. Aku ga bisa bikin sebuah puisi indah untuk kamu, tapi aku mau kamu tau satu hal...</p>
       <p>Kata kata tidak akan pernah cukup untuk menunjukan betapa berartinya kamu dalam hidupku. Terimakasih telah hadir dan im so lucky to meet you, Happy Girlfriend day...</p>
       <p>💖Love you so... miaw'ch...</p>
     </div>
